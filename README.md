@@ -20,6 +20,9 @@ The first build downloads that release's SDK and the exact Rust compiler it was 
 
 On macOS, build on Apple silicon; both Mac architectures can be built from there.
 
+On Linux, the build needs the development packages of what Artoo links with: `libxkbcommon-dev libxkbcommon-x11-dev
+libxcb1-dev libfontconfig1-dev libfreetype-dev`.
+
 ## Run it in Artoo
 
 Point `ARTOO_PLUGIN_DEV` at the library, or at a folder of them, and start the matching Artoo release:

@@ -21,7 +21,7 @@ case "$target" in
 esac
 # The SDK's identity is in the flags so Cargo rebuilds when it changes; separated by 0x1f, so a path may hold spaces.
 us=$(printf '\037')
-CARGO_ENCODED_RUSTFLAGS="-L${us}dependency=$sdk/deps${us}--extern${us}artoo_plugin_sdk=$sdk/deps/$lib${us}--cfg${us}artoo_sdk_build=\"$build\"${us}--check-cfg${us}cfg(artoo_sdk_build,values(any()))"
+CARGO_ENCODED_RUSTFLAGS="-L${us}dependency=$sdk/deps${us}-L${us}native=$sdk/deps${us}--extern${us}artoo_plugin_sdk=$sdk/deps/$lib${us}--cfg${us}artoo_sdk_build=\"$build\"${us}--check-cfg${us}cfg(artoo_sdk_build,values(any()))"
 export CARGO_ENCODED_RUSTFLAGS
 export ARTOO_SDK_BUILD=$build
 flag=
