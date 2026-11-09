@@ -25,13 +25,16 @@ libxcb1-dev libfontconfig1-dev libfreetype-dev`.
 
 ## Run it in Artoo
 
-Point `ARTOO_PLUGIN_DEV` at the library, or at a folder of them, and start the matching Artoo release:
+No repository or release is needed. In Artoo, open Settings → Plugins → Local, choose **Add…** and pick this folder.
+After each build, **Restart Artoo** runs what you built. Its row shows it as `local`, and says why if it was not loaded.
+
+To start Artoo from a terminal instead, point `ARTOO_PLUGIN_DEV` at the library, or at a folder of them:
 
 ```sh
 ARTOO_PLUGIN_DEV="$PWD/$(sh scripts/build.sh)" /Applications/Artoo.app/Contents/MacOS/Artoo
 ```
 
-Settings → Plugins shows it, marked `dev`, and says why if it was not loaded.
+Build against the same Artoo release you run it in: list it first in `artoo-versions.txt`.
 
 ## Publish
 
