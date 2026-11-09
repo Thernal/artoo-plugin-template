@@ -1,0 +1,12 @@
+# Your plugin. The package's name is its id, what a user sees in Settings → Plugins and what names its release assets.
+[package]
+name = "my-artoo-plugin"
+version = "0.1.0"
+edition = "2024"
+repository = "https://github.com/you/my-artoo-plugin"
+
+# A shared library Artoo loads. The SDK is no dependency here: `scripts/build.sh` gives it to rustc, as std is given.
+[lib]
+crate-type = ["dylib"]
+
+[workspace]
