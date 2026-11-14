@@ -8,8 +8,8 @@ trust who made it.
 
 ## Build
 
-Rename the package in `Cargo.toml`: its name is the plugin's id. Set `repository` too, it is what Settings → Plugins
-links to, where a crash report goes, and the only place an update of your plugin is accepted from. List the Artoo releases you support in `artoo-versions.txt`, one per line.
+Rename the package in `Cargo.toml`: its name is the plugin's id. Set `repository` too, it is what Artoo's Plugins
+page links to, where a crash report goes, and the only place an update of your plugin is accepted from. List the Artoo releases you support in `artoo-versions.txt`, one per line.
 
 ```sh
 sh scripts/build.sh
@@ -25,8 +25,9 @@ libxcb1-dev libfontconfig1-dev libfreetype-dev`.
 
 ## Run it in Artoo
 
-No repository or release is needed. In Artoo, open Settings → Plugins → Local, choose **Add…** and pick this folder.
-After each build, **Restart Artoo** runs what you built. Its row shows it as `local`, and says why if it was not loaded.
+No repository or release is needed. In Artoo, open **Plugins** at the foot of the menu, then **Local**, choose
+**Add…** and pick this folder. After each build, **Restart Artoo** runs what you built. Its page says whether the build
+matches the Artoo you run, and why it was not loaded if it was not.
 
 To start Artoo from a terminal instead, point `ARTOO_PLUGIN_DEV` at the library, or at a folder of them:
 
@@ -38,7 +39,8 @@ Build against the same Artoo release you run it in: list it first in `artoo-vers
 
 ## Publish
 
-1. Give the repository the topic `artoo-plugin`, which is how Artoo finds it.
+1. Give the repository the topic `artoo-plugin`, which is how the Plugins page's **Discover** finds it. Its description
+   is the row's line, its README the plugin's page, and its stars and downloads the facts beside them.
 2. Push a tag such as `v0.1.0`. The workflow builds every target for every release in `artoo-versions.txt` and attaches
    `<id>-<artoo-version>-<target>.zip` to a GitHub release.
 
