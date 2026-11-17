@@ -1,0 +1,4 @@
+# Text is LF on every system. A Windows checkout gives CRLF otherwise, and the build reads artoo-versions.txt with the
+# CR of every line but the last: a second Artoo release listed would ask for one that does not exist. Mark the binary
+# files you add (`*.png binary`).
+* text=auto eol=lf
